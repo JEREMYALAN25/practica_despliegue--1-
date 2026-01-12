@@ -1,9 +1,9 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:25'
-            args '-v /var/run/docker.sock:/var/run/docker.sock'
-        }
+    agent any
+
+    tools {
+        nodejs "Node25"
+        dockerTool "Dockertool" 
     }
 
     stages {
@@ -42,3 +42,4 @@ pipeline {
         }
     }
 }
+ 
